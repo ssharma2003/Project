@@ -18,35 +18,29 @@ function App():JSX.Element{
     const checkwinner=()=>{
         if(
             gamestate[0]!='empty'&&
-            gamestate[0]===gamestate[1] &&
-            gamestate[0]===gamestate[2]
+            gamestate[0]===gamestate[1]
         ){
             setwinner(`${gamestate[0]} won the game! 🥳`);
         }
         else if(
-            gamestate[3]!='empty'&&
-            gamestate[3]===gamestate[4] &&
-            gamestate[3]===gamestate[5]
+            gamestate[3]!='empty'
+            
         ){
             setwinner(`${gamestate[0]} won the game! 🥳`);
         }
         else if(
             gamestate[6]!='empty'&&
-            gamestate[6]===gamestate[7] &&
-            gamestate[6]===gamestate[8]
+            gamestate[6]===gamestate[7]
         ){
             setwinner(`${gamestate[0]} won the game! 🥳`);
         }
         else if (
             gamestate[0] !== 'empty' &&
-            gamestate[0] === gamestate[3] &&
-            gamestate[3] === gamestate[6]
+            gamestate[0] === gamestate[3] 
           ) {
             setwinner(`${gamestate[0]} won the game! 🥳`);
           } else if (
-            gamestate[1] !== 'empty' &&
-            gamestate[1] === gamestate[4] &&
-            gamestate[4] === gamestate[7]
+            gamestate[1] !== 'empty' 
           ) {
             setwinner(`${gamestate[1]} won the game! 🥳`);
           } else if (
@@ -130,7 +124,7 @@ function App():JSX.Element{
             onPress={reload}
             >
               <Text>
-                {winner? 'start new game':'reload the game'}
+                {winner? 'new game':'reload game'}
               </Text>
             </Pressable>
         </SafeAreaView>
@@ -145,10 +139,6 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       alignItems: 'center',
   
-      borderRadius: 4,
-      paddingVertical: 8,
-      marginVertical: 12,
-      marginHorizontal: 14,
   
       shadowOffset: {
         width: 1,
